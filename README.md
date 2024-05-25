@@ -9,10 +9,10 @@ www.dio.me
 A `Stream API` é uma abstração disponibilizada no Java 8 para trabalhar com coleções. Trata-se de uma poderosa solução para processar coleções de maneira `declarativa`, ao invés da tradicional e burocrática forma `imperativa`.
 
 ## Exercícios
-Este repositório contém exercícios que colocam em prática os seguintes temas:
+Este repositório contém exemplos e desafios que colocam em prática os seguintes temas:
 
-- Interface Functional
-- Optional
+- Functional Interfaces
+- Principais métodos dsa Stream API
 
 ## Programação Imperativa
 `Programação imperativa` consiste em conjuntos de instruções detalhadas que são fornecidas ao computador para serem executadas em uma determinada ordem.

@@ -5,36 +5,23 @@ As operações (métodos) na Stream API podem ser classificadas em duas categori
 `Operações intermediárias` sempre retornam uma nova stream, de modo que seja possível realizar o encadeamento de múltiplas operações intermediárias.
 
 - `filter(Predicate<T> predicate)`: filtra os elementos da Stream com base em um predicado. Retorna uma nova Stream contendo apenas os elementos que atendem ao critério do predicado;
-
 - `map(Function<T, R> mapper)`: transforma cada elemento da Stream usando a função especificada e retorna uma nova Stream contendo os elementos resultantes;
-
 - `sorted()`: classifica os elementos da Stream em ordem natural (se os elementos forem comparáveis) ou de acordo com um comparador fornecido;
-
 - `distinct()`: remove elementos duplicados da Stream, considerando a implementação do método equals() para comparação;
-
 - `limit(long maxSize)`: limita o número de elementos da Stream aos maxSize primeiros elementos;
-
 - `skip(long n)`: Pula os primeiros n elementos da Stream e retorna uma nova Stream sem eles.
 
 ## Operações Terminais
 `Operações terminais`, como o próprio nome sugere, residem no final da cadeia de operações e seu objetivo é fechar o processo.
 
 - `forEach(Consumer<T> action)`: executa uma ação para cada elemento da Stream;
-
 - `toArray()`: converte a Stream em um array contendo os elementos da Stream;
-
 - `collect(Collector<T, A, R> collector)`: coleta os elementos da Stream em uma estrutura de dados específica, como uma lista ou um mapa;
-
 - `count()`: retorna o número de elementos na Stream;
-
 - `anyMatch(Predicate<T> predicate)`: verifica se algum elemento da Stream atende ao predicado especificado;
-
 - `allMatch(Predicate<T> predicate)`: verifica se todos os elementos da Stream atendem ao predicado especificado;
-
 - `noneMatch(Predicate<T> predicate)`: Verifica se nenhum elemento da Stream atende ao predicado especificado;
-
 - `min(Comparator<T> comparator)` e `max(Comparator<T> comparator)`: Encontra o elemento mínimo e máximo da Stream, respectivamente, de acordo com o comparador fornecido;
-
 - `reduce(T identity, BinaryOperator<T> accumulator)`: Combina os elementos da Stream usando o acumulador especificado e retorna o resultado final.
 
 ## Desafios

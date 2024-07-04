@@ -1,5 +1,18 @@
 # DIO - Trilha POO Java
-www.dio.me
+<div style="display:inline-block">
+        <picture>
+                <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Java-black?style=for-the-badge&logo=OpenJDK&logoColor=white">
+                <img src="https://img.shields.io/badge/Java-white?style=for-the-badge&logo=OpenJDK&logoColor=black" />
+        </picture>
+        <picture>
+                <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Maven-black?style=for-the-badge&logo=ApacheMaven&logoColor=white">
+                <img src="https://img.shields.io/badge/Maven-white?style=for-the-badge&logo=ApacheMaven&logoColor=black" />
+        </picture>
+        <picture>
+                <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Spring_Boot-black?style=for-the-badge&logo=SpringBoot&logoColor=white">
+                <img src="https://img.shields.io/badge/Spring_Boot-white?style=for-the-badge&logo=SpringBoot&logoColor=black" />
+        </picture>
+</div>
 
 ## Autora dos Exercícios e Repositório Original
 - [Camila Cavalcante](https://github.com/cami-la)
@@ -12,7 +25,7 @@ A `Stream API` é uma abstração disponibilizada no Java 8 para trabalhar com c
 Este repositório contém exemplos e desafios que colocam em prática os seguintes temas:
 
 - Functional Interfaces
-- Principais métodos dsa Stream API
+- Principais métodos das Stream API
 
 ## Programação Imperativa
 `Programação imperativa` consiste em conjuntos de instruções detalhadas que são fornecidas ao computador para serem executadas em uma determinada ordem.
@@ -21,52 +34,54 @@ No exemplo a seguir, para fazer uma simples soma foi necessário explicitamente 
 
 ```java
 public class CarrinhoDeCompras {
-  // Atributos
-  private List<Item> itemList;
-  // Construtor
-  public CarrinhoDeCompras() {
-    this.itemList = new ArrayList<>();
-  }
+	// Atributos
+  	private List<Item> itemList;
+	
+  	// Construtor
+  	public CarrinhoDeCompras() {
+    		this.itemList = new ArrayList<>();
+  	}
   
-  // Método para calcular valor total dos itens sem utilizar a Stream API
-  public double calcularValorTotal() {
-    double valorTotal = 0d;
-    if (!itemList.isEmpty()) {
-      for (Item item : itemList) {
-        double valorItem = item.getPreco() * item.getQuantidade();
-        valorTotal += valorItem;
-      }
-      return valorTotal;
-    } else {
-      throw new RuntimeException("A lista está vazia.");
-    }
-  }
+  	// Método para calcular valor total dos itens sem utilizar a Stream API
+	public double calcularValorTotal() {
+    		double valorTotal = 0d;
+    		if (!itemList.isEmpty()) {
+      			for (Item item : itemList) {
+        			double valorItem = item.getPreco() * item.getQuantidade();
+        			valorTotal += valorItem;
+      			}
+      			return valorTotal;
+    		} else {
+      			throw new RuntimeException("A lista está vazia.");
+    		}
+  	}
 }
 ```
 
 ## Programação Declarativa
-`Programação declarativa` é o oposto direto da programação imperativa no sentido de que o desenvolvedor não dá instruções sobre como o computador deve executar a tarefa, mas sim spbre qual resultado é esperado.
+`Programação declarativa` é o oposto direto da programação imperativa no sentido de que o desenvolvedor não dá instruções sobre como o computador deve executar a tarefa, mas sim sobre qual resultado é esperado.
 
 No exemplo a seguir, para realizar a mesma soma que o exemplo anterior foi necessário apenas descrever o que deve ser feito: um stream de itens (`itemList.stream()`), transformar cada item em um valor double (`mapToDouble()`) e somar todos os valores (`sum()`).
 
 ```java
 public class CarrinhoDeCompras {
-  // Atributos
-  private List<Item> itemList;
-  // Construtor
-  public CarrinhoDeCompras() {
-    this.itemList = new ArrayList<>();
-  }
+  	// Atributos
+  	private List<Item> itemList;
+	
+  	// Construtor
+  	public CarrinhoDeCompras() {
+    		this.itemList = new ArrayList<>();
+  	}
   
-  // Método para calcular valor total dos itens utilizando a Stream API
-  public double calcularValorTotal() {
-    if (itemList.isEmpty()) {
-      throw new RuntimeException("A lista está vazia.");
-    }
-    return itemList.stream()
-        .mapToDouble(item -> item.getPreco() * item.getQuant())
-        .sum();
-  }
+  	// Método para calcular valor total dos itens utilizando a Stream API
+  	public double calcularValorTotal() {
+    		if (itemList.isEmpty()) {
+      			throw new RuntimeException("A lista está vazia.");
+    		}
+    		return itemList.stream()
+        	.mapToDouble(item -> item.getPreco() * item.getQuant())
+        	.sum();
+  	}
 }
 ```
 
@@ -77,23 +92,23 @@ A sintaxe de expressões lambda consiste em uma lista de parâmetros separados p
 
 ```java
 public class OrdenacaoPessoa {
-  // Atributo
-  private List<Pessoa> pessoaList;
+	// Atributo
+	private List<Pessoa> pessoaList;
 
-  // Construtor
-  public OrdenacaoPessoa() {
-    this.pessoaList = new ArrayList<>();
-  }
+  	// Construtor
+  	public OrdenacaoPessoa() {
+    		this.pessoaList = new ArrayList<>();
+  	}
 
-  public List<Pessoa> ordenarPorAltura() {
-    if (!pessoaList.isEmpty()) {
-      List<Pessoa> pessoasPorAltura = new ArrayList<>(pessoaList);
-      pessoasPorAltura.sort((p1, p2) -> Double.compare(p1.getAltura(), p2.getAltura()));
-      return pessoasPorAltura;
-    } else {
-      throw new RuntimeException("A lista está vazia.");
-    }
-  }
+  	public List<Pessoa> ordenarPorAltura() {
+    		if (!pessoaList.isEmpty()) {
+      			List<Pessoa> pessoasPorAltura = new ArrayList<>(pessoaList);
+      			pessoasPorAltura.sort((p1, p2) -> Double.compare(p1.getAltura(), p2.getAltura()));
+      			return pessoasPorAltura;
+    		} else {
+      			throw new RuntimeException("A lista está vazia.");
+    		}
+  	}
 }
 ```
 
@@ -104,23 +119,23 @@ Como há diferentes tipos de method references, as sintaxes variam. O tipo de me
 
 ```java
 public class OrdenacaoPessoa {
-  // Atributo
-  private List<Pessoa> pessoaList;
+  	// Atributo
+  	private List<Pessoa> pessoaList;
 
-  // Construtor
-  public OrdenacaoPessoa() {
-    this.pessoaList = new ArrayList<>();
-  }
+  	// Construtor
+  	public OrdenacaoPessoa() {
+    		this.pessoaList = new ArrayList<>();
+  	}
 
-  public List<Pessoa> ordenarPorAltura() {
-    if (!pessoaList.isEmpty()) {
-      List<Pessoa> pessoasPorAltura = new ArrayList<>(pessoaList);
-      pessoasPorAltura.sort(Comparator.comparingDouble(Pessoa::getAltura));
-      return pessoasPorAltura;
-    } else {
-      throw new RuntimeException("A lista está vazia.");
-    }
-  }
+  	public List<Pessoa> ordenarPorAltura() {
+    		if (!pessoaList.isEmpty()) {
+      			List<Pessoa> pessoasPorAltura = new ArrayList<>(pessoaList);
+      			pessoasPorAltura.sort(Comparator.comparingDouble(Pessoa::getAltura));
+      			return pessoasPorAltura;
+    		} else {
+      			throw new RuntimeException("A lista está vazia.");
+    		}
+  	}
 }
 ```
 
